@@ -2,6 +2,8 @@
 #pragma once
 
 #include "../HuEngine.h"
+#include "../Classes/Player.h"
+
 #include "../Classes/PlayerData.h"
 
 class ScoreScene : public HE::Scene
@@ -22,6 +24,8 @@ private:
     HE::Sprite sprite_;
     HE::Sound bgm_;
     PlayerData pd_;
+    Player player_;
+
 
     int score_;
     HE::SpriteFont score_headline_;

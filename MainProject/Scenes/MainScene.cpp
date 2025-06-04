@@ -30,6 +30,7 @@ void MainScene::Load()
     fg_.Load();
     fp_.Load();
     fB_.Load();
+    fBA_.Load();
 
     pd_.Load();
 
@@ -50,6 +51,7 @@ void MainScene::Initialize()
     fo_.Initialize();
     fb_.Initialize();
     fB_.Initialize();
+    fBA_.Initialize();
     fg_.Initialize();
     fp_.Initialize(Math::Vector2(-64.0f * 1.0f,200.0f));
     pd_.Initialize();
@@ -68,6 +70,7 @@ void MainScene::Update(float deltaTime)
  fo_.Update();
  fb_.Update();
  fB_.Update();
+ fBA_.Update();
  fg_.Update();
  fp_.Update();
 
@@ -76,6 +79,7 @@ void MainScene::Update(float deltaTime)
  Math::Rectangle fo_collision = fo_.GetCollision();
  Math::Rectangle fb_collision = fb_.GetCollision();
  Math::Rectangle fB_collision = fB_.GetCollision();
+ Math::Rectangle fBA_collision = fBA_.GetCollision();
  Math::Rectangle fg_collision = fg_.GetCollision();
  Math::Rectangle fp_collision = fp_.GetCollision();
 
@@ -130,6 +134,17 @@ void MainScene::Update(float deltaTime)
  if (player_collision.Intersects(fB_collision)) {
      player_.OnCollision();
      fB_.OnCollision();
+
+     int score = pd_.GetScore();
+     score -= 20;
+     pd_.SetScore(score);
+ }
+
+
+
+ if (player_collision.Intersects(fBA_collision)) {
+     player_.OnCollision();
+     fBA_.OnCollision();
 
      int score = pd_.GetScore();
      score -= 20;

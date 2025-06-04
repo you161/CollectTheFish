@@ -39,9 +39,9 @@ void Fishgreen::Initialize()
 void Fishgreen::Update()
 {
 
-    sprite_.params.pos.x += 200.0f * Time.deltaTime;
+    sprite_.params.pos.x += 80.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f) {
-        sprite_.params.pos.x = -64.0f;
+        SetInitialPosition();
     }
 }
 
@@ -71,5 +71,5 @@ void Fishgreen::OnCollision()
 
 void Fishgreen::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 600.0f);
+    sprite_.params.pos = Math::Vector2(-80.0f, 600.0f);
 }

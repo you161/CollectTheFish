@@ -41,7 +41,7 @@ void FishBrown::Update()
 
     sprite_.params.pos.x += 400.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f)
-        sprite_.params.pos.x = -64.0f;
+        SetInitialPosition();
 }
 
 Math::Rectangle FishBrown::GetCollision()
@@ -70,5 +70,5 @@ void FishBrown::OnCollision()
 
 void FishBrown::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 400.0f);
+    sprite_.params.pos = Math::Vector2(-80.0f, 400.0f);
 }

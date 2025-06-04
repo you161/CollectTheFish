@@ -41,7 +41,7 @@ void Fishblue::Update()
 
     sprite_.params.pos.x += 150.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f)
-        sprite_.params.pos.x = -64.0f;
+        SetInitialPosition();
 }
 
 Math::Rectangle Fishblue::GetCollision()
@@ -70,5 +70,5 @@ void Fishblue::OnCollision()
 
 void Fishblue::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 500.0f);
+    sprite_.params.pos = Math::Vector2(-140.0f, 500.0f);
 }

@@ -29,7 +29,8 @@ void ScoreScene::Load()
     bgm_.PlayFromTop();
 
 
-    
+    player_.Load();
+   
     pd_.Load();
 
     Scene::Load();
@@ -38,6 +39,8 @@ void ScoreScene::Load()
 // initialize a variables.
 void ScoreScene::Initialize()
 {
+    player_.Initialize();
+ 
     pd_.Initialize();
 }
 
@@ -47,21 +50,24 @@ void ScoreScene::Terminate()
 
 }
 
+
 // updates the scene.
 void ScoreScene::Update(float deltaTime)
 {
-
-    if (InputSystem.Keyboard.isPressed.Space) {
+    player_.Update();
+    
+    if (InputSystem.Keyboard.isPressed.Enter) {
         // スペースキーでタイトル画面に戻る
         SceneManager.SetNextScene(NextScene::StartScene);
     }
 
-    if (InputSystem.Keyboard.isPressed.Enter) {
+    if (InputSystem.Keyboard.isPressed.Space) {
        
         SceneManager.SetNextScene(NextScene::MainScene);
     }
 
     Scene::Update(deltaTime);
 }
+
 
 

@@ -41,7 +41,7 @@ void Fishpink::Update()
 
     sprite_.params.pos.x += 200.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f)
-        sprite_.params.pos.x = -64.0f;
+        SetInitialPosition();
 }
 
 Math::Rectangle Fishpink::GetCollision()
@@ -70,5 +70,5 @@ void Fishpink::OnCollision()
 
 void Fishpink::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 200.0f);
+    sprite_.params.pos = Math::Vector2(-80.0f, 200.0f);
 }

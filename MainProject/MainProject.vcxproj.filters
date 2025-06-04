@@ -115,6 +115,9 @@
     <ClInclude Include="Scenes\ScoreScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="Classes\FishBrownA.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -179,6 +182,9 @@
     </ClCompile>
     <ClCompile Include="Scenes\ScoreScene.cpp">
       <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Classes\FishBrownA.cpp">
+      <Filter>Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

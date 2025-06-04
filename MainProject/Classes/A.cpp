@@ -41,7 +41,7 @@ void A::Update()
 
     sprite_.params.pos.x += 270.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f)
-        sprite_.params.pos.x = 0.0f;
+        SetInitialPosition();
 }
 
 Math::Rectangle A::GetCollision()
@@ -70,5 +70,5 @@ void A::OnCollision()
 
 void A::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 300.0f);
+    sprite_.params.pos = Math::Vector2(-80.0f, 300.0f);
 }

@@ -1,19 +1,19 @@
 
-//FishOrange.cpp
+//FishBrownA.cpp
 
-#include "FishOrange.h"
+#include "FishBrownA.h"
 
 using namespace HE;
 
-void FishOrange::Load()
+void FishBrownA::Load()
 {
 
-    sprite_ = Sprite("fish_orange.png");
+    sprite_ = Sprite("fish_brown.png");
     RenderingPath->AddSprite(&sprite_, -50);
     RenderingPath->AddSprite(&collision_sprite_, 1);
 }
 
-void FishOrange::Initialize()
+void FishBrownA::Initialize()
 {
 
     sprite_.params.siz = Math::Vector2(64.0f, 64.0f);
@@ -28,7 +28,7 @@ void FishOrange::Initialize()
 
     // アニメーションの設定
     //sprite_.anim = Sprite::Anim();
-    //sprite_.anim.repeataFishOrangele = true;                       // ループするかしないか
+    //sprite_.anim.repeataFishBrownAle = true;                       // ループするかしないか
     //sprite_.anim.drawRectAnim.frameRate = 4;             // アニメーションの速度
     //sprite_.anim.drawRectAnim.frameCount = 1;             // 画像にアニメーションが何コマあるか
     //sprite_.anim.drawRectAnim.horizontalFrameCount = 1;   // 横に並んでいるコマ数
@@ -36,15 +36,16 @@ void FishOrange::Initialize()
 
 }
 
-void FishOrange::Update()
+void FishBrownA::Update()
 {
 
-    sprite_.params.pos.x += 400.0f * Time.deltaTime;
-    if (sprite_.params.pos.x >= 1280.0f)
-        sprite_.params.pos.x = -64.0f;
+    sprite_.params.pos.x -= 400.0f * Time.deltaTime;
+    sprite_.params.enableMirror();
+    if (sprite_.params.pos.x <= 0.0f)
+        SetInitialPosition();
 }
 
-Math::Rectangle FishOrange::GetCollision()
+Math::Rectangle FishBrownA::GetCollision()
 {
     Math::Rectangle collision;
     collision.x = (long)sprite_.params.pos.x;
@@ -63,12 +64,12 @@ Math::Rectangle FishOrange::GetCollision()
     return collision;
 }
 
-void FishOrange::OnCollision()
+void FishBrownA::OnCollision()
 {
     SetInitialPosition();
 }
 
-void FishOrange::SetInitialPosition()
+void FishBrownA::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 370.0f);
+    sprite_.params.pos = Math::Vector2(1300.0f, 250.0f);
 }
