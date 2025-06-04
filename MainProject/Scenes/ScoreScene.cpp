@@ -28,6 +28,8 @@ void ScoreScene::Load()
     bgm_ = Sound("Sound/Gameover.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
 
+
+    
     pd_.Load();
 
     Scene::Load();
@@ -58,8 +60,6 @@ void ScoreScene::Update(float deltaTime)
        
         SceneManager.SetNextScene(NextScene::MainScene);
     }
-
-    
 
     Scene::Update(deltaTime);
 }

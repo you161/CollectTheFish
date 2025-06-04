@@ -25,12 +25,21 @@ void FishOrange::Initialize()
     collision_sprite_.params.color = Color(0, 0, 255);
     collision_sprite_.params.opacity = 0.0f;
 
+
+    // アニメーションの設定
+    //sprite_.anim = Sprite::Anim();
+    //sprite_.anim.repeataFishOrangele = true;                       // ループするかしないか
+    //sprite_.anim.drawRectAnim.frameRate = 4;             // アニメーションの速度
+    //sprite_.anim.drawRectAnim.frameCount = 1;             // 画像にアニメーションが何コマあるか
+    //sprite_.anim.drawRectAnim.horizontalFrameCount = 1;   // 横に並んでいるコマ数
+
+
 }
 
 void FishOrange::Update()
 {
 
-    sprite_.params.pos.x += 200.0f * Time.deltaTime;
+    sprite_.params.pos.x += 400.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f)
         sprite_.params.pos.x = -64.0f;
 }
@@ -61,5 +70,5 @@ void FishOrange::OnCollision()
 
 void FishOrange::SetInitialPosition()
 {
-    sprite_.params.pos = Math::Vector2(-64.0f, 480.0f);
+    sprite_.params.pos = Math::Vector2(-64.0f, 370.0f);
 }

@@ -8,6 +8,7 @@
 #include "../Classes/Player.h"
 #include "../Classes/A.h"
 #include "../Classes/Fishblue.h"
+#include "../Classes/FishBrown.h"
 #include "../Classes/Fishgreen.h"
 #include "../Classes/Fishpink.h"
 #include "../Classes/FishOrange.h"
@@ -50,6 +51,7 @@ private:
     Fishpink fp_;
     Fishpink fpA_;
     Fishpink fpB_;
+    FishBrown fB_;
 
     PlayerData pd_;
 

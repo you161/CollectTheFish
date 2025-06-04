@@ -25,26 +25,19 @@ void MainScene::Load()
 
     player_.Load();
     a_.Load();
-    Aa_.Load();
     fo_.Load();
     fb_.Load();
     fg_.Load();
     fp_.Load();
-    fpA_.Load();
-    fpB_.Load();
+    fB_.Load();
 
     pd_.Load();
-
-
-
 
     bgm_ = Sound("Sound/BGM.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
 
     se_ = Sound("Sound/PushA.wav", Sound::LoopCount::SE);
     se_.PlayFromTop();
-
-    
 
     Scene::Load();
 }
@@ -54,13 +47,11 @@ void MainScene::Initialize()
     bg_.Initialize();
     player_.Initialize();
     a_.Initialize(Math::Vector2(-64.0f,300.0f));
-    Aa_.Initialize(Math::Vector2(-64.0f * 12.0f,300.0f));
     fo_.Initialize();
     fb_.Initialize();
+    fB_.Initialize();
     fg_.Initialize();
     fp_.Initialize(Math::Vector2(-64.0f * 1.0f,200.0f));
-    fpA_.Initialize(Math::Vector2(-64.0f * 8.0f,200.0f));
-    fpB_.Initialize(Math::Vector2(-64.0f * 15.0f, 200.0f));
     pd_.Initialize();
 }
 // releasing resources required for termination.
@@ -74,23 +65,19 @@ void MainScene::Update(float deltaTime)
  bg_.Update();
  player_.Update();
  a_.Update();
- Aa_.Update();
  fo_.Update();
  fb_.Update();
+ fB_.Update();
  fg_.Update();
  fp_.Update();
- fpA_.Update();
- fpB_.Update();
 
  Math::Rectangle player_collision = player_.GetCollision();
  Math::Rectangle a_collision = a_.GetCollision();
- Math::Rectangle Aa_collision = Aa_.GetCollision();
  Math::Rectangle fo_collision = fo_.GetCollision();
  Math::Rectangle fb_collision = fb_.GetCollision();
+ Math::Rectangle fB_collision = fB_.GetCollision();
  Math::Rectangle fg_collision = fg_.GetCollision();
  Math::Rectangle fp_collision = fp_.GetCollision();
- Math::Rectangle fpA_collision = fpA_.GetCollision();
- Math::Rectangle fpB_collision = fpB_.GetCollision();
 
  if (player_collision.Intersects(a_collision)) {
      player_.OnCollision();
@@ -101,15 +88,6 @@ void MainScene::Update(float deltaTime)
      pd_.SetScore(score);
  }
 
- if (player_collision.Intersects(Aa_collision)) {
-     player_.OnCollision();
-     a_.OnCollision();
-     Aa_.OnCollision();
-
-     int score = pd_.GetScore();
-     score += 10;
-     pd_.SetScore(score);
- }
 
  if (player_collision.Intersects(fo_collision)) {
      player_.OnCollision();
@@ -148,23 +126,13 @@ void MainScene::Update(float deltaTime)
      pd_.SetScore(score);
  }
 
- if (player_collision.Intersects(fpA_collision)) {
+
+ if (player_collision.Intersects(fB_collision)) {
      player_.OnCollision();
-     fpA_.OnCollision();
-    
+     fB_.OnCollision();
 
      int score = pd_.GetScore();
-     score += 5;
-     pd_.SetScore(score);
- }
-
- if (player_collision.Intersects(fpB_collision)) {
-     player_.OnCollision();
-     fpB_.OnCollision();
-    
-
-     int score = pd_.GetScore();
-     score += 5;
+     score -= 20;
      pd_.SetScore(score);
  }
 
