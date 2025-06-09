@@ -55,11 +55,11 @@ void Player::Update()
     sprite_.params.pos += direction * 150.0f * Time.deltaTime;
 
     //‰æ–Ê‚ÌŠO‚Éo‚È‚¢‚æ‚¤‚É‚·‚é
-    sprite_.params.pos.x = std::clamp(sprite_.params.pos.x, 0.0f, 1280.0f - 140.0f);
-    sprite_.params.pos.y = std::clamp(sprite_.params.pos.y, 0.0f, 720.0f - 90.0f);
+    sprite_.params.pos.x = std::clamp(sprite_.params.pos.x, 0.0f, 1280.0f - 84.0f);
+    sprite_.params.pos.y = std::clamp(sprite_.params.pos.y, 0.0f, 720.0f - 63.0f);
 
-    if (sprite_.params.pos.y >= 720.0f - 90.0f) {
-        sprite_.params.pos.y = 0.0f;
+    if (sprite_.params.pos.y >= 720.0f - 63.0f) {
+        sprite_.params.pos.y = -64.0f;
     }
 
 }
