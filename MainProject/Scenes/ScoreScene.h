@@ -23,7 +23,7 @@ public:
 private:
     HE::Sprite sprite_;
     HE::Sound bgm_;
-    PlayerData pd_;
+    PlayerData playerdata_;
     Player player_;
 
 

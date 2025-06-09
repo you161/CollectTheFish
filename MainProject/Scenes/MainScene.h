@@ -55,7 +55,7 @@ private:
     FishBrown fB_;
     FishBrownA fBA_;
 
-    PlayerData pd_;
+    PlayerData playerdata_;
 
 };
 

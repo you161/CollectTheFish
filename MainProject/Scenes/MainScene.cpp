@@ -32,7 +32,7 @@ void MainScene::Load()
     fB_.Load();
     fBA_.Load();
 
-    pd_.Load();
+    playerdata_.Load();
 
     bgm_ = Sound("Sound/BGM.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
@@ -54,7 +54,7 @@ void MainScene::Initialize()
     fBA_.Initialize();
     fg_.Initialize();
     fp_.Initialize(Math::Vector2(-64.0f * 1.0f,200.0f));
-    pd_.Initialize();
+    playerdata_.Initialize();
 }
 // releasing resources required for termination.
 void MainScene::Terminate()
@@ -86,52 +86,52 @@ void MainScene::Update(float deltaTime)
  if (player_collision.Intersects(a_collision)) {
      a_.OnCollision();
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score += 10;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  }
 
 
  if (player_collision.Intersects(fo_collision)) {  
      fo_.OnCollision();
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score += 30;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  } 
  
  if (player_collision.Intersects(fb_collision)) {  
      fb_.OnCollision();
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score += 20;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  }
 
  if (player_collision.Intersects(fg_collision)) { 
      fg_.OnCollision();
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score += 50;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  }
 
  if (player_collision.Intersects(fp_collision)) {
      fp_.OnCollision();
 
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score += 5;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  }
 
 
  if (player_collision.Intersects(fB_collision)) {   
      fB_.OnCollision();
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score -= 50;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  }
 
 
@@ -139,9 +139,9 @@ void MainScene::Update(float deltaTime)
  if (player_collision.Intersects(fBA_collision)) {
      fBA_.OnCollision();
 
-     int score = pd_.GetScore();
+     int score = playerdata_.GetScore();
      score -= 50;
-     pd_.SetScore(score);
+     playerdata_.SetScore(score);
  }
 
 
