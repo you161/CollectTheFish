@@ -130,7 +130,7 @@ void MainScene::Update(float deltaTime)
      fB_.OnCollision();
 
      int score = pd_.GetScore();
-     score -= 20;
+     score -= 50;
      pd_.SetScore(score);
  }
 
@@ -140,7 +140,7 @@ void MainScene::Update(float deltaTime)
      fBA_.OnCollision();
 
      int score = pd_.GetScore();
-     score -= 20;
+     score -= 50;
      pd_.SetScore(score);
  }
 

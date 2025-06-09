@@ -56,7 +56,7 @@ Math::Rectangle FishOrange::GetCollision()
 
 void FishOrange::OnCollision()
 {
-    SetInitialPosition();
+    sprite_.params.pos = Math::Vector2(-80.0f, Random::GetRandom(450.0f, 680.0f));
 }
 
 void FishOrange::SetInitialPosition()

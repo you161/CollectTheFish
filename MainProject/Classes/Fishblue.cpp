@@ -65,7 +65,7 @@ Math::Rectangle Fishblue::GetCollision()
 
 void Fishblue::OnCollision()
 {
-    SetInitialPosition();
+    sprite_.params.pos = Math::Vector2(-140.0f, Random::GetRandom(400.0f, 600.0f));
 }
 
 void Fishblue::SetInitialPosition()

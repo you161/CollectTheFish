@@ -58,7 +58,7 @@ Math::Rectangle A::GetCollision()
 
 void A::OnCollision()
 {
-    SetInitialPosition();
+    sprite_.params.pos = Math::Vector2(-80.0f, Random::GetRandom(100.0f, 400.0f));
 }
 
 void A::SetInitialPosition()
