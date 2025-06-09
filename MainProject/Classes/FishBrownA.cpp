@@ -42,7 +42,7 @@ void FishBrownA::Update()
     sprite_.params.pos.x -= 400.0f * Time.deltaTime;
     sprite_.params.enableMirror();
     if (sprite_.params.pos.x <= 0.0f)
-        SetInitialPosition();
+        sprite_.params.pos = Math::Vector2(1300.0f, Random::GetRandom(100.0f, 680.0f));
 }
 
 Math::Rectangle FishBrownA::GetCollision()

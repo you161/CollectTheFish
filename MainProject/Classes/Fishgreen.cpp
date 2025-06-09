@@ -41,7 +41,7 @@ void Fishgreen::Update()
 
     sprite_.params.pos.x += 80.0f * Time.deltaTime;
     if (sprite_.params.pos.x >= 1280.0f) {
-        SetInitialPosition();
+        sprite_.params.pos = Math::Vector2(-80.0f, Random::GetRandom(300.0f,680.0f));
     }
 }
 

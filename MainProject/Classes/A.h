@@ -17,4 +17,6 @@ public:
 private:
     HE::Sprite sprite_;
     HE::Sprite collision_sprite_;
+  
+   
 };
