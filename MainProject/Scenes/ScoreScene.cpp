@@ -3,6 +3,8 @@
 //
 
 #include "ScoreScene.h"
+#include"DontDestroyOnLoad.h"
+
 
 using namespace HE;
 
@@ -21,18 +23,18 @@ void ScoreScene::ResizeLayout()
 // load resources.
 void ScoreScene::Load()
 {
-    sprite_ = Sprite("ScoreA.png");
+    sprite_ = Sprite("BG_.png");
     RenderingPath->AddSprite(&sprite_, 0);
     sprite_.params.siz = Math::Vector2(1280.0f, 720.0f);
 
-    bgm_ = Sound("Sound/Gameover.wav", Sound::LoopCount::BGM);
-    bgm_.PlayFromTop();
+   /* bgm_ = Sound("Sound/Gameover.wav", Sound::LoopCount::BGM);
+    bgm_.PlayFromTop();*/
 
     
     player_.Load();
    
-    playerdata_.Load();
-  
+
+    DontDestroy.playerdata_.Load();
 
     Scene::Load();
 }
@@ -41,8 +43,8 @@ void ScoreScene::Load()
 void ScoreScene::Initialize()
 {
     player_.Initialize();
- 
-    playerdata_.Initialize();
+
+   DontDestroy.playerdata_.Initialize();
 }
 
 // releasing resources required for termination.

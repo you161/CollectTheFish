@@ -4,6 +4,7 @@
 //
 
 #include "MainScene.h"
+#include"DontDestroyOnLoad.h"
 
 using namespace HE;
 using namespace std;
@@ -34,11 +35,11 @@ void MainScene::Load()
 
     playerdata_.Load();
 
-    bgm_ = Sound("Sound/BGM.wav", Sound::LoopCount::BGM);
+    /*bgm_ = Sound("Sound/BGM.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
 
     se_ = Sound("Sound/PushA.wav", Sound::LoopCount::SE);
-    se_.PlayFromTop();
+    se_.PlayFromTop();*/
 
     Scene::Load();
 }
@@ -144,8 +145,9 @@ void MainScene::Update(float deltaTime)
      playerdata_.SetScore(score);
  }
 
-
  if (InputSystem.Keyboard.isPressed.G) {
+     DontDestroy.playerdata_;
+
      SceneManager.SetNextScene(NextScene::ScoreScene);
  }
      Scene::Update(deltaTime);

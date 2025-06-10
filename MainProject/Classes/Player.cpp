@@ -29,7 +29,7 @@ void Player::Initialize()
 
     // 衝突範囲の表示設定
     collision_sprite_.params.color = Color(255, 0, 0);  // 色
-    collision_sprite_.params.opacity = 0.5f;              // 透明度
+    collision_sprite_.params.opacity = 0.0f;              // 透明度
 
 
     RenderingPath->AddSprite(&sprite_);

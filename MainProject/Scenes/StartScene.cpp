@@ -28,8 +28,8 @@ void StartScene::Load()
     RenderingPath->AddSprite(&sprite_, 0);
     sprite_.params.siz = Math::Vector2(1280.0f, 720.0f);
     
-    bgm_ = Sound("Sound/Gamestart.wav", Sound::LoopCount::BGM);
-    bgm_.PlayFromTop();
+   /* bgm_ = Sound("Sound/Gamestart.wav", Sound::LoopCount::BGM);
+    bgm_.PlayFromTop();*/
 
     Scene::Load();
 }

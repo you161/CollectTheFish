@@ -3,8 +3,10 @@
 
 #include "../HuEngine.h"
 #include "../Classes/Player.h"
-
+#include "../Scenes/MainScene.h"
 #include "../Classes/PlayerData.h"
+
+
 
 class ScoreScene : public HE::Scene
 {
@@ -23,8 +25,8 @@ public:
 private:
     HE::Sprite sprite_;
     HE::Sound bgm_;
-    PlayerData playerdata_;
     Player player_;
+    PlayerData playerdata_;
 
 
     int score_;
