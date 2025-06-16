@@ -22,6 +22,11 @@ void MainScene::ResizeLayout()
 // load resources.
 void MainScene::Load()
 {
+
+    sprite_ = Sprite("fish_grey.png");
+    RenderingPath->AddSprite(&sprite_, -50);
+
+
     bg_.     Load();
 
     player_.Load();
@@ -34,6 +39,7 @@ void MainScene::Load()
     fBA_.Load();
 
     playerdata_.Load();
+    playerlife_.Load();
 
     bgm_ = Sound("Sound/sea.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
@@ -46,6 +52,10 @@ void MainScene::Load()
 // initialize a variables.
 void MainScene::Initialize()
 {
+
+    sprite_.params.siz = Math::Vector2(64.0f, 64.0f);
+    sprite_.params.pos = Math::Vector2(0.0f, 0.0f);
+
     bg_.Initialize();
     player_.Initialize();
     a_.Initialize(Math::Vector2(-64.0f,300.0f));
@@ -56,6 +66,7 @@ void MainScene::Initialize()
     fg_.Initialize();
     fp_.Initialize(Math::Vector2(-64.0f * 1.0f,200.0f));
     playerdata_.Initialize();
+    playerlife_.Initialize();
 }
 // releasing resources required for termination.
 void MainScene::Terminate()
@@ -65,6 +76,22 @@ void MainScene::Terminate()
 // updates the scene.
 void MainScene::Update(float deltaTime)
 { 
+
+
+    sprite_.params.pos.x += 200.0f * Time.deltaTime;
+    if (sprite_.params.pos.x >= 1280.0f) {
+        sprite_.params.pos.x = 0.0f;
+
+        int rest = playerlife_.GetLife();
+        rest -= 1;
+        playerlife_.SetLife(rest);
+
+        if(rest < 0){
+            DontDestroy.playerdata_ = playerdata_;
+            SceneManager.SetNextScene(NextScene::ScoreScene);
+        }
+    }
+
 
  bg_.Update();
  player_.Update();
@@ -146,10 +173,11 @@ void MainScene::Update(float deltaTime)
      playerdata_.SetScore(score);
  }
 
- if (InputSystem.Keyboard.wasPressedThisFrame.G) {
+ /*if (InputSystem.Keyboard.wasPressedThisFrame.G) {
      DontDestroy.playerdata_ = playerdata_;
 
      SceneManager.SetNextScene(NextScene::ScoreScene);
- }
+ }*/
+
      Scene::Update(deltaTime);
 }

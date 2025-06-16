@@ -14,6 +14,7 @@
 #include "../Classes/Fishpink.h"
 #include "../Classes/FishOrange.h"
 #include "../Classes/PlayerData.h"
+#include "../Classes/PlayerLife.h"
 #include"../Scenes/ScoreScene.h"
 #include"../Scenes/StartScene.h"
 
@@ -33,6 +34,8 @@ public:
     
  
 private:
+
+    HE::Sprite sprite_;
     BG     bg_;
     HE::Sound bgm_;
     HE::Sound se_;
@@ -56,6 +59,7 @@ private:
     FishBrownA fBA_;
 
     PlayerData playerdata_;
+    PlayerLife playerlife_;
 
 };
 

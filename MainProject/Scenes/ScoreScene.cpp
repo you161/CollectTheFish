@@ -30,9 +30,9 @@ void ScoreScene::Load()
    /* bgm_ = Sound("Sound/Gameover.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();*/
 
+   
     
     player_.Load();
-   
     DontDestroy.playerdata_.Load();
  
     Scene::Load();
@@ -43,7 +43,7 @@ void ScoreScene::Initialize()
 {
     player_.Initialize();
 
-   DontDestroy.playerdata_.Initialize();
+   //DontDestroy.playerdata_.Initialize();
 }
 
 // releasing resources required for termination.
