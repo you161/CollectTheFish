@@ -45,14 +45,14 @@ void Player::Update()
     if (InputSystem.Keyboard.isPressed.Left)
         direction += Math::Vector2(-1, 0);
     /*if (InputSystem.Keyboard.isPressed.Down)*/
-    sprite_.params.pos.y += 100.0f * Time.deltaTime;
+    sprite_.params.pos.y += 80.0f * Time.deltaTime;
     
 
     //–îˆó‚Ì’·‚³‚ğ1‚É‚·‚é
     direction.Normalize();
 
     auto prev_pos = sprite_.params.pos;
-    sprite_.params.pos += direction * 150.0f * Time.deltaTime;
+    sprite_.params.pos += direction * 100.0f * Time.deltaTime;
 
     //‰æ–Ê‚ÌŠO‚Éo‚È‚¢‚æ‚¤‚É‚·‚é
     sprite_.params.pos.x = std::clamp(sprite_.params.pos.x, 0.0f, 1280.0f - 84.0f);

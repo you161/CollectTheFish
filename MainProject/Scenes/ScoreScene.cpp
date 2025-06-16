@@ -33,9 +33,8 @@ void ScoreScene::Load()
     
     player_.Load();
    
-
     DontDestroy.playerdata_.Load();
-
+ 
     Scene::Load();
 }
 
@@ -52,7 +51,6 @@ void ScoreScene::Terminate()
 {
 
 }
-
 
 // updates the scene.
 void ScoreScene::Update(float deltaTime)
