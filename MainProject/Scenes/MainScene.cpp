@@ -9,17 +9,16 @@
 using namespace HE;
 using namespace std;
 
-// initialize member variables.
 MainScene::MainScene()
 {
 
 }
-// rearrange UI to fit the size.
+
 void MainScene::ResizeLayout()
 {
     Scene::ResizeLayout();
 }
-// load resources.
+
 void MainScene::Load()
 {
 
@@ -28,18 +27,15 @@ void MainScene::Load()
     sprite_W = Sprite("TimeWhite.png");
     RenderingPath->AddSprite(&sprite_W, -50);
 
-
-    bg_.     Load();
-
     player_.Load();
-    a_.Load();
-    fo_.Load();
-    fb_.Load();
-    fg_.Load();
-    fp_.Load();
-    fB_.Load();
+    bg_. Load();
+    a_.  Load();
+    fo_. Load();
+    fb_. Load();
+    fg_. Load();
+    fp_. Load();
+    fB_. Load();
     fBA_.Load();
-
     playerdata_.Load();
     playerlife_.Load();
 
