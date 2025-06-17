@@ -30,6 +30,4 @@ private:
     Player player_;
     PlayerData playerdata_;
 
-    string string_;
-
 };

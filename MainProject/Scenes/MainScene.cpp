@@ -23,8 +23,10 @@ void MainScene::ResizeLayout()
 void MainScene::Load()
 {
 
-    sprite_ = Sprite("fish_grey.png");
-    RenderingPath->AddSprite(&sprite_, -50);
+    sprite_R = Sprite("TimeRed.png");
+    RenderingPath->AddSprite(&sprite_R, -50);
+    sprite_W = Sprite("TimeWhite.png");
+    RenderingPath->AddSprite(&sprite_W, -50);
 
 
     bg_.     Load();
@@ -41,20 +43,23 @@ void MainScene::Load()
     playerdata_.Load();
     playerlife_.Load();
 
-    bgm_ = Sound("Sound/sea.wav", Sound::LoopCount::BGM);
+    bgm_ = Sound("Sound/mainbgm.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
 
-    //se_ = Sound("Sound/PushA.wav", Sound::LoopCount::SE);
-    //se_.PlayFromTop();
+    se_ = Sound("Sound/PushA.wav", Sound::LoopCount::SE);
+    se_.PlayFromTop();
 
     Scene::Load();
 }
-// initialize a variables.
+
 void MainScene::Initialize()
 {
 
-    sprite_.params.siz = Math::Vector2(64.0f, 64.0f);
-    sprite_.params.pos = Math::Vector2(0.0f, 0.0f);
+    sprite_R.params.siz = Math::Vector2(1280.0f, 25.0f);
+    sprite_R.params.pos = Math::Vector2(0.0f, 0.0f);
+
+    sprite_W.params.siz = Math::Vector2(1280.0f, 25.0f);
+    sprite_W.params.pos = Math::Vector2(0.0f, 0.0f);
 
     bg_.Initialize();
     player_.Initialize();
@@ -68,19 +73,19 @@ void MainScene::Initialize()
     playerdata_.Initialize();
     playerlife_.Initialize();
 }
-// releasing resources required for termination.
+
 void MainScene::Terminate()
 {
 
 }
-// updates the scene.
+
 void MainScene::Update(float deltaTime)
 { 
 
 
-    sprite_.params.pos.x += 200.0f * Time.deltaTime;
-    if (sprite_.params.pos.x >= 1280.0f) {
-        sprite_.params.pos.x = 0.0f;
+    sprite_W.params.pos.x += 150.0f * Time.deltaTime;
+    if (sprite_W.params.pos.x >= 1280.0f) {
+        sprite_W.params.pos.x = 0.0f;
 
         int rest = playerlife_.GetLife();
         rest -= 1;
@@ -154,7 +159,6 @@ void MainScene::Update(float deltaTime)
      playerdata_.SetScore(score);
  }
 
-
  if (player_collision.Intersects(fB_collision)) {   
      fB_.OnCollision();
 
@@ -163,8 +167,6 @@ void MainScene::Update(float deltaTime)
      playerdata_.SetScore(score);
  }
 
-
-
  if (player_collision.Intersects(fBA_collision)) {
      fBA_.OnCollision();
 
@@ -172,12 +174,5 @@ void MainScene::Update(float deltaTime)
      score -= 50;
      playerdata_.SetScore(score);
  }
-
- /*if (InputSystem.Keyboard.wasPressedThisFrame.G) {
-     DontDestroy.playerdata_ = playerdata_;
-
-     SceneManager.SetNextScene(NextScene::ScoreScene);
- }*/
-
      Scene::Update(deltaTime);
 }

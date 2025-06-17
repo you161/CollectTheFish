@@ -35,7 +35,8 @@ public:
  
 private:
 
-    HE::Sprite sprite_;
+    HE::Sprite sprite_R;
+    HE::Sprite sprite_W;
     BG     bg_;
     HE::Sound bgm_;
     HE::Sound se_;

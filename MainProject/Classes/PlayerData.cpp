@@ -22,17 +22,17 @@ void PlayerData::Initialize()
 
     // スコア見出し(1-UP)
     score_headline_.SetText(L"Score");
-    score_headline_.params.posX = 256.0f;
-    score_headline_.params.posY = 0.0f;
-    score_headline_.params.size = 50;
+    score_headline_.params.posX = 440.0f;
+    score_headline_.params.posY = 30.0f;
+    score_headline_.params.size = 60;
     score_headline_.params.color = Color(255, 255, 255);    // 赤, 緑, 青(0-255)
 
     // スコア数値
     score_text_.SetText(std::to_string(score_));
-    score_text_.params.posX = 290.0f;
-    score_text_.params.posY = 35.0f;
-    score_text_.params.size = 50;
-    score_text_.params.color = Color(255, 0, 0);
+    score_text_.params.posX = 460.0f;
+    score_text_.params.posY = 80.0f;
+    score_text_.params.size = 80;
+    score_text_.params.color = Color(0, 0, 255);
 }
 
 void PlayerData::SetScore(int score)

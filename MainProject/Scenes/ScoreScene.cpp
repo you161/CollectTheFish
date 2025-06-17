@@ -23,12 +23,12 @@ void ScoreScene::ResizeLayout()
 // load resources.
 void ScoreScene::Load()
 {
-    sprite_ = Sprite("BG_.png");
+    sprite_ = Sprite("ScoreScene.png");
     RenderingPath->AddSprite(&sprite_, 0);
     sprite_.params.siz = Math::Vector2(1280.0f, 720.0f);
 
-   /* bgm_ = Sound("Sound/Gameover.wav", Sound::LoopCount::BGM);
-    bgm_.PlayFromTop();*/
+    bgm_ = Sound("Sound/scorebgm.wav", Sound::LoopCount::BGM);
+    bgm_.PlayFromTop();
 
    
     
@@ -43,7 +43,6 @@ void ScoreScene::Initialize()
 {
     player_.Initialize();
 
-   //DontDestroy.playerdata_.Initialize();
 }
 
 // releasing resources required for termination.
@@ -58,7 +57,7 @@ void ScoreScene::Update(float deltaTime)
     player_.Update();
     
     if (InputSystem.Keyboard.isPressed.Enter) {
-        // スペースキーでタイトル画面に戻る
+       
         SceneManager.SetNextScene(NextScene::StartScene);
     }
 

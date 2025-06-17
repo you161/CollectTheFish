@@ -44,7 +44,7 @@ void Player::Update()
         direction += Math::Vector2(1, 0);
     if (InputSystem.Keyboard.isPressed.Left)
         direction += Math::Vector2(-1, 0);
-    /*if (InputSystem.Keyboard.isPressed.Down)*/
+   
     sprite_.params.pos.y += 80.0f * Time.deltaTime;
     
 
@@ -61,7 +61,6 @@ void Player::Update()
     if (sprite_.params.pos.y >= 720.0f - 63.0f) {
         sprite_.params.pos.y = -64.0f;
     }
-
 }
 
 Math::Rectangle Player::GetCollision()
