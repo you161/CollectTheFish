@@ -4,6 +4,7 @@
 #include "Scenes/MainScene.h"
 #include "Scenes/ScoreScene.h"
 #include"Scenes/StartScene.h"
+#include"Scenes/ExplanationScene.h"
 
 void SceneManagement::Initialize()
 {
@@ -37,6 +38,10 @@ std::unique_ptr<HE::Scene> SceneManagement::CreateScene(const NextScene nextScen
 
 	case NextScene::ScoreScene:
 		scene = std::make_unique<ScoreScene>();
+		break;
+
+	case NextScene::ExplanationScene:
+		scene = std::make_unique< ExplanationScene >();
 		break;
 
 	}

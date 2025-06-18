@@ -131,6 +131,7 @@
     <ClInclude Include="Resources\resource.h" />
     <ClInclude Include="SceneManagement.h" />
     <ClInclude Include="Scenes\DontDestroyOnLoad.h" />
+    <ClInclude Include="Scenes\ExplanationScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />
     <ClInclude Include="Scenes\ScoreScene.h" />
     <ClInclude Include="Scenes\StartScene.h" />
@@ -163,6 +164,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Scenes\ExplanationScene.cpp" />
     <ClCompile Include="Scenes\MainScene.cpp" />
     <ClCompile Include="Scenes\ScoreScene.cpp" />
     <ClCompile Include="Scenes\StartScene.cpp" />

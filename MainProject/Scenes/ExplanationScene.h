@@ -2,11 +2,11 @@
 
 #include "../HuEngine.h"
 
-class StartScene : public HE::Scene
+class ExplanationScene : public HE::Scene
 {
 public:
-    StartScene();
-    virtual ~StartScene() { Terminate(); }
+    ExplanationScene();
+    virtual ~ExplanationScene() { Terminate(); }
 
     void ResizeLayout() override;
 
@@ -19,7 +19,14 @@ public:
 private:
 
     HE::Sprite sprite_;
+    HE::Sprite sprite_red_;
+    HE::Sprite sprite_brown_;
+    HE::Sprite sprite_pink_;
+    HE::Sprite sprite_green_;
+    HE::Sprite sprite_blue_;
+    HE::Sprite sprite_orange_;
     HE::Sound bgm_;
     HE::Sound se_;
+
     HE::SpriteFont score_headline_;
 };

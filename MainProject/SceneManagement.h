@@ -10,6 +10,7 @@ enum class NextScene : int {
 	StartScene,
 	MainScene,
 	ScoreScene,
+	ExplanationScene,
 	
 };
 

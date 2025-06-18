@@ -30,6 +30,9 @@ void ScoreScene::Load()
     bgm_ = Sound("Sound/scorebgm.wav", Sound::LoopCount::BGM);
     bgm_.PlayFromTop();
 
+    se_ = Sound("Sound/TimeUp.wav", Sound::LoopCount::SE);
+    se_.PlayFromTop();
+
    
     
     player_.Load();
@@ -62,7 +65,9 @@ void ScoreScene::Update(float deltaTime)
     }
 
     if (InputSystem.Keyboard.isPressed.Space) {
-       
+        se_ = Sound("Sound/Continue.wav", Sound::LoopCount::SE);
+        se_.PlayFromTop();
+
         SceneManager.SetNextScene(NextScene::MainScene);
     }
 

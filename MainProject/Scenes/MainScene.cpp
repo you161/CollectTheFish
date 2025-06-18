@@ -87,6 +87,13 @@ void MainScene::Update(float deltaTime)
         rest -= 1;
         playerlife_.SetLife(rest);
 
+        if (rest < 0) {
+        }
+        else {
+            se_ = Sound("Sound/Time.wav", Sound::LoopCount::SE);
+            se_.PlayFromTop();
+        }
+        
         if(rest < 0){
             DontDestroy.playerdata_ = playerdata_;
             SceneManager.SetNextScene(NextScene::ScoreScene);
@@ -119,6 +126,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score += 10;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Collect.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  }
 
 
@@ -128,6 +138,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score += 30;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Collect.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  } 
  
  if (player_collision.Intersects(fb_collision)) {  
@@ -136,6 +149,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score += 20;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Collect.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  }
 
  if (player_collision.Intersects(fg_collision)) { 
@@ -144,6 +160,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score += 50;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Collect.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  }
 
  if (player_collision.Intersects(fp_collision)) {
@@ -153,6 +172,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score += 5;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Collect.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  }
 
  if (player_collision.Intersects(fB_collision)) {   
@@ -161,6 +183,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score -= 50;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Da.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  }
 
  if (player_collision.Intersects(fBA_collision)) {
@@ -169,6 +194,9 @@ void MainScene::Update(float deltaTime)
      int score = playerdata_.GetScore();
      score -= 50;
      playerdata_.SetScore(score);
+
+     se_ = Sound("Sound/Da.wav", Sound::LoopCount::SE);
+     se_.PlayFromTop();
  }
      Scene::Update(deltaTime);
 }
